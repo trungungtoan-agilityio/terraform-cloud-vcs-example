@@ -1,18 +1,17 @@
-# Learn Terraform on Azure: Basic Example
+# Learn Terraform on Azure: Training Packages
 
-This project demonstrates how to use [Terraform](https://developer.hashicorp.com/terraform) to provision basic Azure resources using Infrastructure as Code (IaC).
+This project demonstrates how to use [Terraform](https://developer.hashicorp.com/terraform) to provision Azure resources, organized into progressive training packages.
 
-## Contents
+## Training Structure
 
-- `main.tf` — Main Terraform configuration (Azure provider, resource group, virtual network)
-- `variables.tf` — Input variables for customization (resource group name, location)
-- `outputs.tf` — Output values (resource group and virtual network IDs)
+The training examples are organized into four progressive packages:
 
-## Prerequisites
+- `fundamental/` — Basic Terraform and Azure usage (provider, resource group, vnet)
+- `intermediate/` — Intermediate concepts (modules, variables, outputs, more resources)
+- `advanced/` — Advanced topics (remote state, workspaces, security, complex modules)
+- `capstone/` — Capstone project combining all concepts in a real-world scenario
 
-- [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.1.0
-- An [Azure account](https://portal.azure.com/)
-- Azure CLI authenticated (`az login`)
+Each package contains its own Terraform configuration and README.
 
 ## Usage
 
@@ -22,40 +21,19 @@ This project demonstrates how to use [Terraform](https://developer.hashicorp.com
    cd learn-terraform-azure
    ```
 
-2. **Initialize Terraform:**
+2. **Choose a training state:**
    ```sh
-   terraform init
+   cd fundamental
+   # or cd intermediate, advanced, capstone
    ```
 
-3. **Review the execution plan:**
-   ```sh
-   terraform plan
-   ```
+3. **Follow the README in each package for instructions.**
 
-4. **Apply the configuration:**
-   ```sh
-   terraform apply
-   ```
-   Confirm with `yes` when prompted.
+## Prerequisites
 
-5. **View outputs:**
-   ```sh
-   terraform output
-   ```
-
-## Customization
-
-You can override variables at apply time, for example:
-```sh
-terraform apply -var="location=eastus" -var="resource_group_name=customRG"
-```
-Or edit `variables.tf` to change defaults.
-
-## Clean Up
-To destroy all resources created by this configuration:
-```sh
-terraform destroy
-```
+- [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.1.0
+- An [Azure account](https://portal.azure.com/)
+- Azure CLI authenticated (`az login`)
 
 ## References
 - [Terraform Azure Provider Docs](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
